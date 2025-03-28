@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Example</title>
+    <title>Turbold Delta</title> 
     <style>
         body {
             background-color: black;
@@ -11,31 +11,45 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
+
         a {
             color: #4CAF50;
-            font-size: 18px;
+            font-size: 5vw;  /* Responsive font size /
+            font-weight: bold; / Make the text bold */
             text-decoration: none;
             background-color: #333;
-            padding: 10px 20px;
+            padding: 20px 40px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            display: inline-block;
         }
 
         a:hover {
             background-color: #555;
         }
-
-        /* Protection for URL */
-        a:active, a:focus {
-            outline: none;
-        }
     </style>
 </head>
 <body>
-    <a href="itms-services://?action=download-manifest&url=https://deltaios-executor.com/Install1.plist">
+    <a href="#" id="download-link">
         Татаж авах хийсэн Turbold TV эзэн
     </a>
+
+    <script>
+        // Obfuscating the URL
+        const urlPart1 = "itms-services://?action=download-manifest&url=";
+        const urlPart2 = "https://codex-ios.com/Install1.plist";
+        const fullUrl = urlPart1 + urlPart2;
+
+        // Dynamically set the href attribute
+        document.getElementById("download-link").addEventListener("click", function() {
+            window.location.href = fullUrl;
+        });
+    </script>
 </body>
 </html>
